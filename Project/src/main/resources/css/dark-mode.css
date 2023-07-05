@@ -1,0 +1,54 @@
+/* General styles for components */
+.component-style {
+  -fx-background-color: #333333;
+  -fx-text-fill: #CCCCCC;
+}
+
+/* Specific styles for individual components */
+.menu-bar {
+  -fx-background-color: #444444;
+}
+
+.tool-bar {
+  -fx-background-color: #555555;
+}
+
+.choice-box {
+  -fx-background-color: #444444;
+}
+
+.checkbox {
+  -fx-text-fill: #CCCCCC;
+}
+
+
+.label {
+  -fx-background-color: #555555;
+  -fx-text-fill: #CCCCCC;
+}
+
+.dark-list-view{
+  -fx-background-color: #666666;
+  -fx-text-fill: #CCCCCC;
+}
+
+.pane-style{
+  -fx-background-color: #666666;
+  -fx-text-fill: #CCCCCC;
+}
+
+.text-field {
+  -fx-background-color: #555555;
+  -fx-text-fill: #CCCCCC;
+}
+
+.text-area-style {
+  -fx-control-inner-background: #555555;
+  -fx-text-fill: #CCCCCC;
+}
+
+.round-border {
+  -fx-background-color-radius: 100;
+  -fx-border-color: #606060;
+  -fx-border-width: 1px;
+}

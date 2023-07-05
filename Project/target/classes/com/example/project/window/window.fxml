@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane fx:id="rootPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project.window.WindowController">
+   <children>
+      <BorderPane fx:id="borderPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  <MenuBar fx:id="menuBar" prefHeight="26.0" prefWidth="900.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem fx:id="openButton" mnemonicParsing="false" text="Open" />
+                              <MenuItem fx:id="saveButton" mnemonicParsing="false" text="Save" />
+                              <MenuItem fx:id="closeButton" mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Edit">
+                        <items>
+                          <MenuItem fx:id="undoButton" mnemonicParsing="false" text="Undo" />
+                              <MenuItem fx:id="redoButton" mnemonicParsing="false" text="Redo" />
+                              <MenuItem fx:id="copyButton" mnemonicParsing="false" text="Copy" />
+                              <MenuItem fx:id="showBallsButton" mnemonicParsing="false" text="Show balls" />
+                              <MenuItem fx:id="showSticksButton" mnemonicParsing="false" text="Show Sticks" />
+                              <MenuItem fx:id="showRibbonsButton" mnemonicParsing="false" text="Show ribons" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="View">
+                        <items>
+                          <MenuItem fx:id="fullScreenButton" mnemonicParsing="false" text="Enter Full Screen" />
+                              <MenuItem fx:id="exitScreenButton" mnemonicParsing="false" text="Exit Full Screen" />
+                              <MenuItem fx:id="lightButton" mnemonicParsing="false" text="Light mode" />
+                              <MenuItem fx:id="darkButton" mnemonicParsing="false" text="Dark mode" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                           <items>
+                              <MenuItem fx:id="aboutButton" mnemonicParsing="false" text="About" />
+                           </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+                  <ToolBar fx:id="toolBar" prefHeight="40.0" prefWidth="900.0">
+                    <items>
+                        <CheckBox fx:id="ballsCheckBox" mnemonicParsing="false" styleClass="checkbox" text="Balls" />
+                        <Slider fx:id="ballSlider" blockIncrement="2.0" max="20.0" prefHeight="14.0" prefWidth="102.0" value="5.0" />
+                        <CheckBox fx:id="stickCheckBox" mnemonicParsing="false" styleClass="checkbox" text="Sticks" />
+                        <Slider fx:id="stickSlider" blockIncrement="2.0" max="20.0" prefHeight="14.0" prefWidth="109.0" value="5.0" />
+                        <CheckBox fx:id="ribbonsCheckBox" mnemonicParsing="false" styleClass="checkbox" text="Ribbons" />
+                        <Slider fx:id="ribbonSlider" blockIncrement="2.0" max="20.0" prefHeight="14.0" prefWidth="101.0" value="5.0" />
+                        <Label text="Color by" />
+                        <ChoiceBox fx:id="colorChoiceButton" prefHeight="26.0" prefWidth="137.0" />
+                        <Label fx:id="modelLabel" prefHeight="18.0" prefWidth="41.0" text="Model" textAlignment="RIGHT" visible="false" />
+                        <ChoiceBox fx:id="modelsChoiceBox" prefHeight="26.0" prefWidth="123.0" visible="false" />
+                    </items>
+                     <styleClass>
+                        <String fx:value="round-border" />
+                        <String fx:value="tool-bar" />
+                     </styleClass>
+                  </ToolBar>
+               </children>
+            </VBox>
+         </top>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <styleClass>
+            <String fx:value="component-style" />
+            <String fx:value="round-border" />
+         </styleClass>
+         <center>
+            <HBox BorderPane.alignment="CENTER">
+               <children>
+                  <VBox minWidth="-Infinity" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox prefHeight="27.0" prefWidth="900.0">
+                           <children>
+                              <Label fx:id="searchLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="52.0" styleClass="round-border" text="Search" textAlignment="CENTER" />
+                              <TextField fx:id="PDBentryField" prefHeight="26.0" prefWidth="150.0">
+                                 <styleClass>
+                                    <String fx:value="round-border" />
+                                    <String fx:value="text-field" />
+                                 </styleClass>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <ListView fx:id="entriesList" styleClass="dark-list-view" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+                  <VBox VBox.vgrow="ALWAYS">
+                     <children>
+                        <Pane fx:id="figurePane" minHeight="300.0" minWidth="200.0" styleClass="component-style" VBox.vgrow="ALWAYS">
+                           <cursor>
+                              <Cursor fx:constant="W_RESIZE" />
+                           </cursor>
+                        </Pane>
+                        <TextFlow fx:id="textFlow" styleClass="component-style" VBox.vgrow="ALWAYS">
+                        </TextFlow>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+      <TitledPane fx:id="aboutPane" animated="false" layoutX="300.0" layoutY="200.0" prefHeight="206.0" prefWidth="279.0" text="About MoleculeViewer" visible="false">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="204.0" prefWidth="297.0">
+               <children>
+                  <TextArea editable="false" layoutX="-2.0" layoutY="-2.0" prefHeight="185.0" prefWidth="279.0" styleClass="text-area-style" text="PDB View application allows &#10;the visualization of a .pbd file&#10;from the server as well as stored&#10;ones and  present tools to show &#10;the balls, sticks and ribbons of the &#10;structure in different ways.">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="exitButton" layoutX="121.0" layoutY="139.0" mnemonicParsing="false" styleClass="component-style" text="Exit" />
+               </children>
+               <styleClass>
+                  <String fx:value="component-style" />
+                  <String fx:value="round-border" />
+               </styleClass>
+            </AnchorPane>
+         </content>
+         <styleClass>
+            <String fx:value="component-style" />
+            <String fx:value="round-border" />
+         </styleClass>
+      </TitledPane>
+      <StackPane fx:id="loadingPane" prefHeight="494.0" prefWidth="900.0" visible="false">
+         <children>
+            <Group>
+               <children>
+                  <Label alignment="TOP_CENTER" layoutX="66.39999389648438" text="Loading ..." textAlignment="CENTER">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar layoutY="30.0" prefWidth="200.0" />
+               </children>
+            </Group>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
